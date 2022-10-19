@@ -22,3 +22,11 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+// @TODO
+jsx 报错问题
+
+
+简介：
+基于vue2 + element-ui + vue-router + vuex + axios 的后台管理系统平台模板

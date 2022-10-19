@@ -1,0 +1,94 @@
+@import url('./form.scss');
+@import url('./table.scss');
+@import url('./tree.scss');
+@import url('./pagination.scss');
+@import url('./toolbar.scss');
+
+.grid-box :deep .el-table:hover .el-table__fixed-right {
+  
+  right: 12px !important;
+  bottom: 12px !important;
+}
+
+
+.grid-box {
+  display: flex;
+  align-items: stretch;
+  height: 100%;
+  position: relative;
+  background-color: transparent;
+  &.hasShadow {
+    box-shadow: 0px 5px 20px 0px rgba(40, 63, 88, 0.05);
+  }
+}
+
+
+
+
+
+
+/* 右侧 [表单，表格，工具栏，分页随机组合] */
+.grid-content {
+  padding: 22px 30px 10px 30px;
+  overflow: auto;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  &.hastree {
+    width: calc(100% - 230px);
+    border-radius: 0 5px 5px 0;
+  }
+  &.notree {
+    width: 100%;
+    border-radius: 0 5px 5px 5px;
+  }
+}
+
+
+
+
+/* toolbar 和 toolbar融合的按鈕樣式 */
+.graph-toolbar {
+  /* margin-top: 12px; */
+  /* margin-bottom: 18px; */
+}
+.graph-toolbar,
+.graph-toolbar div {
+  display: flex;
+}
+
+/* 机构树展开收缩控制按钮 */
+#s-grid .show-tree-btn {
+  position: absolute;
+  cursor: pointer;
+  z-index: 30;
+  left: -18px;
+  top: 0;
+  font-size: 14px;
+  width: 18px;
+  height: 34px;
+  text-indent: 4px;
+  background: #fff;
+  text-align: center;
+  border-radius: 4px 0px 0px 4px;
+}
+.undisplay {
+  display: none;
+}
+
+
+
+
+.grid-tool-box + .el-table,
+.form-content+.el-table,
+.form-content+.grid-tool-box {
+  margin-top: 10px !important;
+}
+/* 图表 的表格和分页 */
+.graph-table-pagination {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+

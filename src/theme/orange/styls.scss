@@ -1,0 +1,6 @@
+// 深色主题的特殊样式
+
+body.orange {
+  @import './element-variables.scss';
+  @import "~element-ui/packages/theme-chalk/src/index";
+}

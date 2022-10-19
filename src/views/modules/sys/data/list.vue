@@ -1,0 +1,165 @@
+<template>
+  <div id="menuList">
+    <grid
+      :api="api"
+      :model="dataForm"
+      :columns="columns"
+      :method="'post'"
+      :requestOption="{contentType: 'json'}"
+      :rowKey="'id'"
+      :multiSelectedArr.sync="multipleSelection"
+      ref="data"
+      :requestCallback="requestCallback"
+    >
+      <div slot="form">
+        <el-form-item :label="$t('sys.data.code')">
+          <el-input v-model="dataForm.code"></el-input>
+        </el-form-item>
+        <el-form-item :label="$t('sys.data.name')">
+          <el-input v-model="dataForm.name"></el-input>
+        </el-form-item>
+      </div>
+      <btn-list :data="btnList" @click="action" slot="toolbar"></btn-list>
+    </grid>
+    <!-- 弹窗, 新增 / 修改 -->
+    <add-or-update v-if="addOrUpdateVisible" ref="addOrUpdate" @refreshDataList="refresh"></add-or-update>
+  </div>
+</template>
+
+<script type="text/jsx">
+import AddOrUpdate from './Data-add-or-update'
+export default {
+  name: 'I18nList',
+  components: { AddOrUpdate },
+  mixins: [],
+  props: {},
+  data () {
+    return {
+      api: '/service/data/getPage',
+      columns: [
+        { type: 'selection', align: 'center', width: '50' },
+        { label: 'sys.data.code', prop: 'code', align: 'center' },
+        { label: 'sys.data.nameEnUs', prop: 'nameEnUs', align: 'center' },
+        { label: 'sys.data.nameLocal', prop: 'nameLocal', align: 'center' },
+        { label: 'sys.data.value', prop: 'value', align: 'center' },
+        { label: 'sys.data.memo', prop: 'memo', align: 'center' },
+        {
+          label: 'sys.data.flag',
+          align: 'center',
+          render (h, { row }) {
+            const flag = (
+              <span>
+                {this.$store.getters['getDictName']('status', row.flag)}
+              </span>
+            )
+            return [flag]
+          }
+        }
+      ],
+      addOrUpdateVisible: false,
+      dataForm: {
+        code: '',
+        name: ''
+      },
+      multipleSelection: []
+    }
+  },
+  computed: {
+    btnList () {
+      return this.$store.getters.getPermissionsByCode('management.systemdata')
+    }
+  },
+  created () {
+  },
+  mounted () { },
+  methods: {
+    action (functionName) {
+      const hasFun = !!(functionName && this[functionName])
+      if (hasFun) {
+        this[functionName]()
+      } else {
+        this.$message('该功能暂未支持,请联系管理员确认配置是否出错！')
+      }
+    },
+    add () {
+      this.addOrUpdateVisible = true
+      this.$nextTick(() => {
+        this.$refs.addOrUpdate.init()
+      })
+    },
+    edit () {
+      if (this.multipleSelection.length === 0) {
+        this.$message({
+          message: this.$t('info.common.selectmore'),
+          type: 'warning',
+          duration: 1500
+        })
+      } else if (this.multipleSelection.length === 1) {
+        this.addOrUpdateVisible = true
+        let editItem = {}
+        this.$refs.data.list.forEach(item => {
+          if (item.id === this.multipleSelection[0].id) {
+            editItem = JSON.parse(JSON.stringify(item))
+          }
+        })
+        console.log(editItem)
+        this.$nextTick(() => {
+          this.$refs.addOrUpdate.init(editItem)
+        })
+      } else {
+        this.$message({
+          message: this.$t('info.common.selectone'),
+          type: 'warning',
+          duration: 1500
+        })
+      }
+    },
+    exportData () { },
+    refresh () {
+      this.$refs.data.getDataList()
+    },
+    requestCallback (grid, data) {
+      if (data && data.code === 0) {
+        grid.list = data.data.result
+        grid.totalCount = data.data.totalCount
+      }
+    },
+    del (id) {
+      var ids = id
+        ? [id]
+        : this.multipleSelection.map((item) => {
+          return item.id
+        })
+      let params = {}
+      params = {
+        ids: ids,
+        language: this.$store.state.i18n.locale === 'zh' ? 'zh_CN' : 'en_us'
+      }
+      this.$confirm(this.$t('info.common.delete'), this.$t('window.prompt')).then(() => {
+        this.$http({
+          url: '/service/data/del',
+          method: 'post',
+          data: params,
+          contentType: 'json'
+        }).then((res) => {
+          if (res && res.code === 0) {
+            this.refresh()
+            this.$message({
+              message: this.$t('info.common.deletesuccess'),
+              type: 'success',
+              duration: 1500,
+              onClose: () => { }
+            })
+          } else {
+            this.$message.error(this.$t(res.msg))
+          }
+        })
+      })
+    }
+  },
+  filters: {},
+  watch: {}
+}
+</script>
+<style lang="scss" scoped>
+</style>
