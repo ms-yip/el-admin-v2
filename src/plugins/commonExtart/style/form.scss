@@ -1,0 +1,105 @@
+
+
+.grid-search-form-box {
+  background: #fff;
+  /* border-bottom: 1px solid rgba(224, 228, 242, 1); */
+  &.grid-less {
+    height: auto;
+  }
+  &.grid-more {
+    overflow: hidden;
+  }
+  
+}
+
+
+.search-form {
+  border: none;
+  flex: 1;
+  :deep .el-form-item {
+      margin-bottom: 18px;
+      text-align: justify;
+
+      @media screen and (max-width: 1540px) {}
+    }
+
+   :deep .el-form-item__label {
+      display: inline-flex;
+      width: 96px;
+      height: 34px;
+      line-height: 17px;
+      text-overflow: ellipsis;
+      align-items: center;
+      justify-content: flex-end;
+      text-align: right;
+      // color: $content--input-color;
+      font-size: 14px;
+      padding: 0 10px 0 0;
+      overflow: hidden;
+    }
+
+    :deep .el-form-item label+.el-form-item__content,
+    :deep .el-input,
+    :deep .el-input__inner {
+      width: 190px;
+      // color: $content--input-color;
+      // background-color: #f9fbff !important;
+    }
+}
+
+/* 隐藏用于测算单行的表单 */
+.grid-hide-form {
+  /* float: left;
+  margin-left: -100000px; */
+  visibility: hidden;
+  /* padding-bottom: 8px; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: red;
+}
+
+.more-select {
+  position: absolute;
+  overflow: visible;
+  cursor: pointer;
+  z-index: 3;
+  bottom: -15px;
+  width: 90px;
+  height: 16px;
+  text-align: center;
+  left: 50%;
+  font-size: 11px;
+  margin-left: -2.79rem;
+  background: #fff;
+  background-size: cover;
+  border: 1px solid rgba(224, 228, 242, 1);
+  border-top: none;
+  // color: $primary-btn-color;
+  border-radius: 0 0 1.05rem 1.05rem;
+}
+
+
+/* 查询表单 */
+.form-content {
+  height: auto;
+  position: relative;
+  margin-bottom: 16px;
+  padding-bottom: 5px;
+  &::before { // 线
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 7px;
+    background: #fff;
+    z-index: 2;
+    bottom: 0;
+    left: 0;
+    border-bottom: 1px solid rgba(224, 228, 242, 1);
+  }
+}
+
+
+
+

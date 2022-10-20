@@ -1,0 +1,60 @@
+@import 'normalize.css/normalize.css';
+@import url('./el-reset.scss');
+/* @import url('./global/common.scss');*/
+
+
+
+
+/* 全局样式 */
+html,body, #app{
+  height: 100%;
+}
+/* 全局字体设置 */
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  font-size: 14px;
+  color:#252c41;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+/* 字体大小 px
+   38 登录标题
+   28 重点数据
+   20 欢迎语.次要数据
+   16 标题 弹框内容 登录内容
+   14 主要内容
+   12 辅助文字、次要信息、页码
+*/
+
+
+/* 滚动条设置 */
+::-webkit-scrollbar {
+  /* width: 2px; */
+  /* height: 2px; */
+}
+/* 滚动条的滑轨背景颜色 */
+::-webkit-scrollbar-track {
+  background-color: rgba(168, 180, 203, 0.2);
+}
+::-webkit-scrollbar-button {
+  /* background-color: transparent; */
+}
+
+/* 滑轨两头的监听按钮颜色 */
+
+/* 横向滚动条和纵向滚动条相交处尖角的颜色 */
+::-webkit-scrollbar-corner {
+  background-color: rgba(168, 180, 203, 0.1);
+  /* background-color: transparent; */
+}
+
+::-webkit-scrollbar-thumb {
+  /* border-radius: 2px; */
+  background-color: rgba(168, 180, 203, 0.3);
+}
+/* 滚动条设置 END */
