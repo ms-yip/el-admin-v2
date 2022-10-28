@@ -1,2 +1,2 @@
 # el-admin-v2
-vue + element system
+vue2 + element system
