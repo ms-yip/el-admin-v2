@@ -25,11 +25,7 @@ import {
   RadioGroup,
   // RadioButton,
   Checkbox,
-<<<<<<< HEAD
   CheckboxButton,
-=======
-  // CheckboxButton,
->>>>>>> ad24299c2cbfb338e7f56e5a1e147b4269455d60
   CheckboxGroup,
   // Switch,
   Select,
@@ -99,11 +95,7 @@ Vue.use(Radio)
 Vue.use(RadioGroup)
 // Vue.use(RadioButton)
 Vue.use(Checkbox)
-<<<<<<< HEAD
 Vue.use(CheckboxButton)
-=======
-// Vue.use(CheckboxButton)
->>>>>>> ad24299c2cbfb338e7f56e5a1e147b4269455d60
 Vue.use(CheckboxGroup)
 // Vue.use(Switch)
 Vue.use(Select)

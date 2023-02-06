@@ -1,11 +1,7 @@
 // 引入mockjs
 const Mock = require('mockjs')
 // Mock.mock( url, methods [ /post|get/i | post | get] , 返回的mob数据)；// /post|get/i 匹配post和get模式 也可以用'post'或'get'
-<<<<<<< HEAD
 const { response, users } = require('./userData')
-=======
-const { response } = require('./userData')
->>>>>>> ad24299c2cbfb338e7f56e5a1e147b4269455d60
 function controlor (data) {
   return {
     code: 0,
@@ -18,11 +14,7 @@ Mock.mock('/api/login', 'post',
     name: 'admin',
     account: 'admin账号',
     deptInfo: {
-<<<<<<< HEAD
       name: '总部'
-=======
-      name: '顶级银行'
->>>>>>> ad24299c2cbfb338e7f56e5a1e147b4269455d60
     },
     tel: '020-',
     email: '22.com',
@@ -39,7 +31,6 @@ Mock.mock('/api/logout', 'get',
   controlor({})
 )
 
-<<<<<<< HEAD
 
 // /api/service/dept/getDepts 机构列表
 // /api/service/user/getPage
@@ -367,5 +358,3 @@ Mock.mock('/api/service/user/getPage', 'get', {
     pages: 2,
   },
 })
-=======
->>>>>>> ad24299c2cbfb338e7f56e5a1e147b4269455d60
