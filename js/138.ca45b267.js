@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkel_admin_v2"]=self["webpackChunkel_admin_v2"]||[]).push([[138],{7138:function(e,t,n){n.r(t),n.d(t,{default:function(){return l}});var a=function(){var e=this,t=e._self._c;return t("div",{attrs:{id:"detail"}},[e._v("系统公告")])},r=[],u={name:"AdDetail",components:{},mixins:[],props:{},data(){return{}},computed:{},created(){},mounted(){},methods:{},filters:{},watch:{}},i=u,s=n(3736),d=(0,s.Z)(i,a,r,!1,null,"728aa3b4",null),l=d.exports}}]);
+//# sourceMappingURL=138.ca45b267.js.map
