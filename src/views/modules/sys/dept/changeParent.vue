@@ -22,12 +22,12 @@
       </el-form-item>
     </el-form>
     <div slot="footer">
-      <el-button @click="visible = false">{{$t('button.cancel')}}</el-button>
+      <el-button @click="visible = false">取消</el-button>
       <el-button
         type="primary"
         @click="dataFormSubmit()"
         v-loading.fullscreen.lock="fullscreenLoading"
-      >{{$t('button.confirm')}}</el-button>
+      >确定</el-button>
     </div>
   </el-dialog>
 </template>

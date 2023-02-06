@@ -3,11 +3,11 @@
     :visible.sync="visible"
   >
     <el-table :data="tableData">
-      <el-table-column prop="termId" :label="$t('term.info.termId')"></el-table-column>
-      <el-table-column prop="deptName" :label="$t('term.info.deptName')"></el-table-column>
+      <el-table-column prop="termId" :label="$t('termId')"></el-table-column>
+      <el-table-column prop="deptName" :label="$t('deptName')"></el-table-column>
       <el-table-column prop="typeId" :label="$t('term.model.typeId')"></el-table-column>
-      <el-table-column prop="modelId" :label="$t('term.info.modelId')"></el-table-column>
-      <el-table-column  id = "brand" prop="brandId" :label="$t('term.info.brandId')"></el-table-column>
+      <el-table-column prop="modelId" :label="$t('modelId')"></el-table-column>
+      <el-table-column  id = "brand" prop="brandId" :label="$t('brandId')"></el-table-column>
     </el-table>
   </el-dialog>
 </template>

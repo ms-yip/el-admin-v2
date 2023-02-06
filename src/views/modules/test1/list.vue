@@ -11,10 +11,10 @@
       :multiSelectedArr.sync="dataListSelections"
     >
       <div slot="form">
-        <el-form-item :label="$t('termGroup.name')">
+        <el-form-item :label="$t('name')">
           <el-input
             size="mini"
-            :placeholder="this.$t('termGroup.name')"
+            :placeholder="this.$t('name')"
             v-model="dataForm.groupName"
             clearable
             style="width:140px;"
@@ -45,7 +45,7 @@ export default {
       },
       columns: [
         { type: 'selection', width: 50 },
-        { label: 'termGroup.name',
+        { label: 'name',
           render (h, { row }) {
             const show = (
               <el-button
@@ -59,9 +59,9 @@ export default {
           },
           sortable: true
         },
-        { label: 'term.info.remark', prop: 'memo', sortable: true },
+        { label: 'remark', prop: 'memo', sortable: true },
         {
-          label: 'term.info.Flag',
+          label: 'Flag',
           render (h, { row }) {
             const flag = (
               <span>
@@ -72,7 +72,7 @@ export default {
           },
           sortable: true
         },
-        { label: 'button.operation',
+        { label: 'operation',
           fixed: 'right',
           render (h, { row }) {
             // var filt = row.filter
@@ -178,8 +178,8 @@ export default {
     copy () { },
     del (id) {
       this.$confirm(this.$t('info.common.delete'), {
-        confirmButtonText: this.$t('button.confirm'),
-        cancelButtonText: this.$t('button.cancel'),
+        confirmButtonText: this.$t('confirm'),
+        cancelButtonText: this.$t('cancel'),
         type: 'warning'
       }).then(() => {
         let params = {}
@@ -206,7 +206,7 @@ export default {
       }).catch(() => {
         this.$message({
           type: 'info',
-          message: this.$t('button.unselect')
+          message: this.$t('unselect')
         })
       })
     },

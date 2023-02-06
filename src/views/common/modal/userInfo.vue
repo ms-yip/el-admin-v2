@@ -2,33 +2,33 @@
 <template>
     <el-dialog
       id="userInfo"
-      :title="$t('window.userDetail')"
+      :title="$t('用户信息')"
       :visible.sync="visible"
       :append-to-body="true"
       >
       <el-form v-model="dataForm" label-width="150px">
-        <el-form-item :label="$t('sys.user.account')">
+        <el-form-item :label="$t('账号')">
           <el-input v-model="dataForm.account"></el-input>
         </el-form-item>
-        <el-form-item :label="$t('sys.user.name')">
+        <el-form-item :label="$t('名称')">
           <el-input v-model="dataForm.name"></el-input>
         </el-form-item>
-        <el-form-item :label="$t('sys.user.dept')">
+        <el-form-item :label="$t('机构')">
           <el-input v-model="dataForm.deptInfo.name"></el-input>
         </el-form-item>
-        <el-form-item :label="$t('sys.user.tel')">
+        <el-form-item :label="$t('电话')">
           <el-input v-model="dataForm.tel"></el-input>
         </el-form-item>
-        <el-form-item :label="$t('sys.user.email')">
+        <el-form-item :label="$t('邮箱')">
           <el-input v-model="dataForm.email"></el-input>
         </el-form-item>
-        <el-form-item :label="$t('sys.user.lastLoginip')">
+        <el-form-item :label="$t('最后登录地址')">
           <el-input v-model="dataForm.lastLoginip"></el-input>
         </el-form-item>
-        <el-form-item :label="$t('sys.user.lastLogintime')">
+        <el-form-item :label="$t('最后登录时间')">
           <el-input v-model="lastLogintime"></el-input>
         </el-form-item>
-        <el-form-item :label="$t('sys.user.loginTotal')">
+        <el-form-item :label="$t('登录次数')">
           <el-input v-model="dataForm.loginTotal"></el-input>
         </el-form-item>
       </el-form>

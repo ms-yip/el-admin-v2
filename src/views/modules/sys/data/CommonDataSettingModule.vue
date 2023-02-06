@@ -4,7 +4,7 @@
       <div class="settingModule">
         <label>时间设置</label>
         <el-input class style="width:100px" v-model="eventPassTime" :maxlength="25"></el-input>
-        <el-button type="primary" @click="dataFormSubmit()">{{$t('button.submit')}}</el-button>
+        <el-button type="primary" @click="dataFormSubmit()">提交</el-button>
       </div>
     </el-row>
   </div>

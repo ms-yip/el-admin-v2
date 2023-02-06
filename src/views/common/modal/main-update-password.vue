@@ -1,6 +1,6 @@
 <template>
   <el-dialog
-    :title="$t('window.changePassword')"
+    :title="$t('修改密码')"
     :visible.sync="visible"
     :append-to-body="true"
   >
@@ -11,40 +11,40 @@
       @keyup.enter.native="dataFormSubmit()"
       label-width="150px"
     >
-      <el-form-item :label="$t('sys.user.changePwd_oldPassword')" prop="password">
+      <el-form-item :label="$t('旧密码')" prop="password">
         <el-input
           type="password"
           v-model="dataForm.password"
-          :placeholder="$t('sys.user.changePwd_oldPassword')"
+          :placeholder="$t('旧密码')"
           maxlength="16"
           minlength="6"
         />
       </el-form-item>
-      <el-form-item :label="$t('sys.user.changePwd_newPassword')" prop="newPassword">
+      <el-form-item :label="$t('新密码')" prop="newPassword">
         <el-input
           type="password"
           v-model="dataForm.newPassword"
-          :placeholder="$t('sys.user.changePwd_newPassword')"
+          :placeholder="$t('新密码')"
           maxlength="16"
           minlength="6"
         />
       </el-form-item>
-      <el-form-item :label="$t('sys.user.changePwd_newPasswordConfirm')" prop="confirmPassword">
+      <el-form-item :label="$t('确认新密码')" prop="confirmPassword">
         <el-input
           type="password"
           v-model="dataForm.confirmPassword"
-          :placeholder="$t('sys.user.changePwd_newPasswordConfirm')"
+          :placeholder="$t('确认新密码')"
         />
       </el-form-item>
     </el-form>
     <span slot="footer" class="dialog-footer">
-      <el-button @click="visible = false">{{ $t('btn.cancel') }}</el-button>
+      <el-button @click="visible = false">{{ $t('取消') }}</el-button>
       <el-button
         type="primary"
         @click="dataFormSubmit()"
         v-loading.fullscreen.lock="fullscreenLoading"
       >
-        {{ $t('btn.save') }}
+        {{ $t('确定') }}
       </el-button>
     </span>
   </el-dialog>

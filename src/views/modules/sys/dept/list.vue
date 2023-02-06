@@ -14,21 +14,21 @@
       :requestCallback="requestCallback"
     >
       <div slot="form">
-        <el-form-item :label="this.$t('sys.dept.code')">
-          <el-input v-model="dataForm.code" :placeholder="this.$t('sys.dept.code')" clearable></el-input>
+        <el-form-item label="编号">
+          <el-input v-model="dataForm.code" placeholder="编号" clearable></el-input>
         </el-form-item>
-        <el-form-item :label="this.$t('sys.dept.name')">
-          <el-input v-model="dataForm.name" :placeholder="this.$t('sys.dept.name')" clearable></el-input>
+        <el-form-item label="名称">
+          <el-input v-model="dataForm.name" placeholder="名称" clearable></el-input>
         </el-form-item>
-        <el-form-item :label="this.$t('sys.dept.contactMan')">
+        <el-form-item label="联系人">
           <el-input
             v-model="dataForm.contactMan"
-            :placeholder="this.$t('sys.dept.contactMan')"
+            placeholder="联系人"
             clearable
           ></el-input>
         </el-form-item>
-        <el-form-item :label="this.$t('sys.dept.address')">
-          <el-input v-model="dataForm.address" :placeholder="this.$t('sys.dept.address')" clearable></el-input>
+        <el-form-item label="地址">
+          <el-input v-model="dataForm.address" placeholder="地址" clearable></el-input>
         </el-form-item>
       </div>
       <btn-list :data="btnList" @click="action" slot="toolbar"></btn-list>
@@ -53,9 +53,9 @@ export default {
     return {
       api: '/service/dept/getDepts',
       columns: [
-        { label: 'sys.dept.name', prop: 'name', align: 'left', minWidth: '200' },
-        { label: 'sys.dept.address', prop: 'address', align: 'center', width: '220' },
-        { label: 'sys.dept.telephone', prop: 'telephone', align: 'center' },
+        { label: '名称', prop: 'name', align: 'left', minWidth: '200' },
+        { label: '地址', prop: 'address', align: 'center', width: '220' },
+        { label: '电话', prop: 'telephone', align: 'center' },
         {
           label: '标志',
           align: 'center',
@@ -173,7 +173,7 @@ export default {
         name: this.dataForm.name,
         contactMan: this.dataForm.contactMan,
         address: this.dataForm.address,
-        titles: this.$t('sys.dept.name') + ',' +
+        titles: '名称' + ',' +
           this.$t('sys.dept.deptIndex') + ',' +
           this.$t('sys.dept.code') + ',' +
           this.$t('sys.dept.contactMan') + ',' +
@@ -181,7 +181,7 @@ export default {
           this.$t('sys.dept.telephone') + ',' +
           this.$t('sys.dept.unionNo') + ',' +
           this.$t('sys.dept.unionBankno') + ',' +
-          this.$t('feelview.term.info.longitude') + ',' +
+          this.$t('feelview.longitude') + ',' +
           this.$t('feelview.term.info.dimension') + ',' +
           this.$t('sys.dept.orgMark') + ',' +
           this.$t('sys.dept.status') + ',' +
@@ -249,7 +249,7 @@ export default {
         ids: [this.selectedByMouseClick.id],
         language: this.$store.state.i18n.locale === 'zh' ? 'zh_CN' : 'en_us'
       }
-      this.$confirm(this.$t('info.common.delete'), this.$t('window.prompt')).then(() => {
+      this.$confirm(this.$t('info.common.delete'), this.$t('提示')).then(() => {
         this.$http({
           url: '/service/dept/del',
           method: 'post',

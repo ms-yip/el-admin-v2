@@ -11,19 +11,19 @@
       has-tree
     >
       <div slot="form">
-        <el-form-item :label="$t('sys.user.account')">
+        <el-form-item label="账号">
           <el-input
             size="mini"
-            :placeholder="this.$t('sys.user.account')"
+            placeholder="账号"
             v-model="dataForm.account"
             clearable
           />
         </el-form-item>
-        <el-form-item :label="$t('sys.user.name')">
+        <el-form-item label="姓名">
           <el-input
             size="mini"
             v-model="dataForm.name"
-            :placeholder="this.$t('sys.user.name')"
+            placeholder="姓名"
             clearable
           />
         </el-form-item>
@@ -61,12 +61,12 @@ export default {
       columns: [
         { type: 'selection', width: 50 },
         { label: '机构', prop: 'deptName' },
-        { label: 'sys.user.account', prop: 'account' },
-        { label: 'sys.user.name', prop: 'name' },
-        { label: 'sys.user.tel', prop: 'tel', minWidth: '100' },
-        { label: 'sys.user.email', prop: 'email' },
+        { label: '账号', prop: 'account' },
+        { label: '名称', prop: 'name' },
+        { label: '手机号', prop: 'tel', minWidth: '100' },
+        { label: '邮件', prop: 'email' },
         {
-          label: 'sys.user.flag',
+          label: '标志',
           render (h, { row }) {
             const flag = (
               <span>
@@ -76,7 +76,7 @@ export default {
             return [flag]
           }
         },
-        { label: 'sys.user.roles', prop: 'userRole', minWidth: 200 }
+        { label: '角色', prop: 'userRole', minWidth: 200 }
       ],
       dataListSelections: []
     }
@@ -168,7 +168,7 @@ export default {
         ids: ids,
         language: this.$store.state.i18n.locale === 'zh' ? 'zh_CN' : 'en_us'
       }
-      this.$confirm(this.$t('info.common.delete'), this.$t('window.prompt')).then(() => {
+      this.$confirm(this.$t('info.common.delete'), this.$t('提示')).then(() => {
         this.$http({
           url: '/service/user/del',
           method: 'post',
@@ -201,7 +201,7 @@ export default {
           duration: 1500
         })
       } else if (this.multipleSelection.length === 1) {
-        this.$confirm(this.$t('info.password.reset'), this.$t('window.prompt')).then(() => {
+        this.$confirm(this.$t('info.password.reset'), this.$t('提示')).then(() => {
           let params = {}
           params = {
             id: this.multipleSelection[0].id,

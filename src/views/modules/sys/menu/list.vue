@@ -12,8 +12,8 @@
       :layout="['toolbar', 'table']"
     >
       <btn-list :data="btnList" @click="action" slot="toolbar"></btn-list>
-      <el-button type="primary" icon="icon-ic_tianjia" @click="refresh()">{{$t('button.refresh')}}</el-button>
-      <el-button type="primary" icon="icon-ic_tianjia" @click="refresh()">{{$t('button.export')}}</el-button>
+      <el-button type="primary" icon="icon-ic_tianjia" @click="refresh()">{{$t('refresh')}}</el-button>
+      <el-button type="primary" icon="icon-ic_tianjia" @click="refresh()">{{$t('export')}}</el-button>
     </grid>
     <!-- 弹窗, 新增 / 修改 -->
     <add-or-update v-if="addOrUpdateVisible" ref="addOrUpdate" @refreshDataList="refresh"></add-or-update>
@@ -31,12 +31,12 @@ export default {
     return {
       api: `/service/module/getTree/${this.$store.state.i18n.locale === 'zh' ? 'zh_CN' : 'en_us'}`,
       columns: [
-        { label: 'sys.menu.name', prop: 'name', align: 'left', minWidth: '200' },
-        { label: 'sys.menu.nameLocal', align: 'center', prop: 'nameLocal' },
-        { label: 'sys.menu.nameEnUs', align: 'center', prop: 'nameEnUs' },
-        { label: 'sys.menu.moduleLevel', align: 'center', prop: 'moduleLevel' },
+        { label: '菜单', prop: 'name', align: 'left', minWidth: '200' },
+        { label: '中文', align: 'center', prop: 'nameLocal' },
+        { label: '英文', align: 'center', prop: 'nameEnUs' },
+        { label: '层级', align: 'center', prop: 'moduleLevel' },
         {
-          label: 'sys.menu.moduleType',
+          label: '类型',
           render (h, { row }) {
             const moduleType = (
               <span style="">
@@ -47,7 +47,7 @@ export default {
           }
         },
         {
-          label: 'sys.menu.flag',
+          label: '标志',
           render (h, { row }) {
             const flag = (
               <span style="">
@@ -57,8 +57,8 @@ export default {
             return [flag]
           }
         },
-        { label: 'sys.menu.url', prop: 'url', width: '300' },
-        { label: 'sys.menu.iconUrl', align: 'center', prop: 'iconUrl', isFilter: true },
+        { label: 'url', prop: 'url', width: '300' },
+        { label: 'iconUrl', align: 'center', prop: 'iconUrl', isFilter: true },
       ],
       addOrUpdateVisible: false,
       selectedByMouseClick: null,
@@ -156,7 +156,7 @@ export default {
         ids: [this.selectedByMouseClick.id],
         language: this.$store.state.i18n.locale === 'zh' ? 'zh_CN' : 'en_us'
       }
-      this.$confirm(this.$t('info.common.delete'), this.$t('window.prompt')).then(() => {
+      this.$confirm(this.$t('info.common.delete'), this.$t('提示')).then(() => {
         this.$http({
           url:
             '/service/module/delete',

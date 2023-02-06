@@ -12,11 +12,11 @@
       :requestCallback="requestCallback"
     >
       <div slot="form">
-        <el-form-item :label="this.$t('sys.lang.code')">
-          <el-input v-model="dataForm.code" :placeholder="this.$t('sys.lang.code')" clearable></el-input>
+        <el-form-item :label="this.$t('编码')">
+          <el-input v-model="dataForm.code" :placeholder="this.$t('编码')" clearable></el-input>
         </el-form-item>
-        <el-form-item :label="this.$t('sys.lang.name')">
-          <el-input v-model="dataForm.name" :placeholder="this.$t('sys.lang.name')" clearable></el-input>
+        <el-form-item :label="this.$t('名称')">
+          <el-input v-model="dataForm.name" :placeholder="this.$t('名称')" clearable></el-input>
         </el-form-item>
       </div>
       <btn-list :data="btnList" @click="action" slot="toolbar"></btn-list>
@@ -44,10 +44,10 @@ export default {
       },
       columns: [
         { type: 'selection', align: 'center', width: '50' },
-        { label: 'sys.lang.code', prop: 'code', align: 'center' },
-        { label: 'sys.lang.nameEnUs', prop: 'nameEnUs', align: 'center' },
-        { label: 'sys.lang.nameLocal', prop: 'nameLocal', align: 'center' },
-        { label: 'sys.lang.memo', prop: 'memo', align: 'center' }
+        { label: '编码', prop: 'code', align: 'center' },
+        { label: '中文', prop: 'nameEnUs', align: 'center' },
+        { label: '英文', prop: 'nameLocal', align: 'center' },
+        { label: '备注', prop: 'memo', align: 'center' }
       ]
     }
   },
@@ -153,7 +153,7 @@ export default {
         ids: ids,
         language: this.$store.state.i18n.locale === 'zh' ? 'zh_CN' : 'en_us'
       }
-      this.$confirm(this.$t('info.common.delete'), this.$t('window.prompt')).then(() => {
+      this.$confirm(this.$t('info.common.delete'), this.$t('提示')).then(() => {
         this.$http({
           url: '/service/language/del',
           method: 'post',

@@ -42,7 +42,7 @@
       </el-form-item>
     </el-form>
     <span slot="footer" class="dialog-footer">
-      <el-button @click="reset">{{ $t('button.reset') }}</el-button>
+      <el-button @click="reset">{{ $t('reset') }}</el-button>
       <el-button
         type="primary"
         @click="dataFormSubmit()"

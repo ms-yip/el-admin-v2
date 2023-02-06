@@ -1,6 +1,6 @@
 <template>
   <el-dialog
-    :title="$t('button.select')"
+    :title="$t('select')"
     :close-on-click-modal="false"
     @close="closeHandle"
     :visible.sync="visible"

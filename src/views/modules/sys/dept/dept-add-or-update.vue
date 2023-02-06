@@ -1,6 +1,6 @@
 <template>
   <el-dialog
-    :title="!dataForm.id ? this.$t('window.add') : this.$t('window.edit')"
+    :title="!dataForm.id ? '新增' : '编辑'"
     :visible.sync="visible"
     @close="resetDataForm"
   >
@@ -13,19 +13,19 @@
     >
       <el-row>
         <el-col :span="12">
-          <el-form-item :label="$t('sys.dept.name')" prop="name">
+          <el-form-item label="名称" prop="name">
             <el-input v-model="dataForm.name" :maxlength="25"></el-input>
           </el-form-item>
         </el-col>
          <el-col :span="12">
-          <el-form-item :label="$t('sys.dept.code')" prop="code">
+          <el-form-item label="编码" prop="code">
             <el-input v-model="dataForm.code" :maxlength="25"></el-input>
           </el-form-item>
         </el-col>
       </el-row>
       <el-row>
         <el-col :span="12">
-          <el-form-item :label="$t('sys.dept.parentName')" prop="parentName">
+          <el-form-item label="父级" prop="parentName">
             <el-select size="mini" v-model="parentName" :disabled="disabled">
               <el-option :value="parentName">
                 <el-tree
@@ -42,12 +42,12 @@
 
       <el-row>
         <el-col :span="12">
-          <el-form-item :label="$t('sys.dept.contactMan')" prop="contactMan">
+          <el-form-item label="联系人" prop="contactMan">
             <el-input v-model="dataForm.contactMan" :maxlength="25"></el-input>
           </el-form-item>
         </el-col>
         <el-col :span="12">
-          <el-form-item :label="$t('状态')" prop="status">
+          <el-form-item label="状态" prop="status">
             <el-select size="mini" v-model="dataForm.status">
               <el-option
                 v-for="item in statusList"
@@ -61,29 +61,29 @@
       </el-row>
       <el-row>
         <el-col :span="12">
-          <el-form-item :label="$t('sys.dept.telephone')" prop="telephone">
+          <el-form-item label="电话" prop="telephone">
             <el-input v-model="dataForm.telephone" :maxlength="25"></el-input>
           </el-form-item>
         </el-col>
       </el-row>
       <el-row>
-        <el-form-item :label="$t('sys.dept.address')" prop="address">
+        <el-form-item label="地址" prop="address">
           <el-input v-model="dataForm.address" :maxlength="25"></el-input>
         </el-form-item>
       </el-row>
       <el-row>
-        <el-form-item :label="$t('sys.dept.memo')" prop="memo">
+        <el-form-item label="备注" prop="memo">
           <el-input v-model="dataForm.memo" :maxlength="25"></el-input>
         </el-form-item>
       </el-row>
     </el-form>
     <div slot="footer">
-      <el-button @click="visible = false">{{$t('button.cancel')}}</el-button>
+      <el-button @click="visible = false">取消</el-button>
       <el-button
         type="primary"
         @click="dataFormSubmit()"
         v-loading.fullscreen.lock="fullscreenLoading"
-      >{{$t('button.confirm')}}</el-button>
+      >确定</el-button>
     </div>
   </el-dialog>
 </template>

@@ -12,10 +12,10 @@
       :requestCallback="requestCallback"
     >
       <div slot="form">
-        <el-form-item :label="this.$t('sys.role.roleName')">
+        <el-form-item :label="this.$t('角色名称')">
           <el-input
             v-model="dataForm.roleName"
-            :placeholder="this.$t('sys.role.roleName')"
+            :placeholder="this.$t('角色名称')"
             clearable
           ></el-input>
         </el-form-item>
@@ -47,9 +47,9 @@ export default {
       },
       columns: [
         { type: 'selection', align: 'center', width: '50' },
-        { label: 'sys.role.roleName', prop: 'roleName', align: 'center' },
+        { label: '角色名称', prop: 'roleName', align: 'center' },
         {
-          label: 'sys.role.roleLevel',
+          label: '级别',
           prop: 'roleLevel',
           align: 'center',
           render (h, { row }) {
@@ -177,7 +177,7 @@ export default {
         ids: ids,
         language: this.$store.state.i18n.locale === 'zh' ? 'zh_CN' : 'en_us'
       }
-      this.$confirm(this.$t('info.common.delete'), this.$t('window.prompt')).then(() => {
+      this.$confirm(this.$t('info.common.delete'), this.$t('提示')).then(() => {
         this.$http({
           url: '/service/role/del',
           method: 'post',

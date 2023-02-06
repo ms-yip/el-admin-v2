@@ -1,6 +1,6 @@
 <template>
   <el-dialog
-    :title="!dataForm.id ? this.$t('window.add') : this.$t('window.edit')"
+    :title="!dataForm.id ? '新增' : '编辑'"
     :visible.sync="visible"
     @close="resetDataForm"
   >
@@ -12,20 +12,20 @@
       label-width="150px"
     >
 
-      <el-form-item :label="$t('sys.menu.nameEnUs')" prop="nameEnUs">
+      <el-form-item :label="$t('英文')" prop="nameEnUs">
         <el-input v-model="dataForm.nameEnUs" :maxlength="25"></el-input>
       </el-form-item>
-      <el-form-item :label="$t('sys.menu.nameLocal')" prop="nameLocal">
+      <el-form-item :label="$t('中文')" prop="nameLocal">
         <el-input v-model="dataForm.nameLocal" :maxlength="25"></el-input>
       </el-form-item>
-      <el-form-item :label="$t('sys.menu.parentName')" prop="parentName">
+      <el-form-item :label="$t('父级')" prop="parentName">
         <el-select size="mini" v-model="dataForm.parentName">
           <el-option :value="dataForm.parentName">
             <el-tree :data="menuList" :props="defaultProps" accordion @node-click="handleNodeClick"></el-tree>
           </el-option>
         </el-select>
       </el-form-item>
-      <el-form-item :label="$t('sys.menu.moduleType')" prop="moduleType">
+      <el-form-item :label="$t('类型')" prop="moduleType">
         <el-select size="mini" v-model="dataForm.moduleType" :disabled="editable">
           <el-option
             v-for="item in typeList"
@@ -41,10 +41,10 @@
       <el-form-item :label="$t('url')" prop="url">
         <el-input v-model="dataForm.url" :maxlength="25"></el-input>
       </el-form-item>
-      <el-form-item :label="$t('sys.menu.memo')" prop="memo">
+      <el-form-item :label="$t('备注')" prop="memo">
         <el-input v-model="dataForm.memo" :maxlength="25"></el-input>
       </el-form-item>
-      <el-form-item :label="$t('sys.menu.flag')" prop="flag">
+      <el-form-item :label="$t('标志')" prop="flag">
         <el-select size="mini" v-model="dataForm.flag">
           <el-option
             v-for="item in statusList"
@@ -56,12 +56,12 @@
       </el-form-item>
     </el-form>
     <div slot="footer">
-      <el-button @click="visible = false">{{$t('button.cancel')}}</el-button>
+      <el-button @click="visible = false">取消</el-button>
       <el-button
         type="primary"
         @click="dataFormSubmit()"
         v-loading.fullscreen.lock="fullscreenLoading"
-      >{{$t('button.confirm')}}</el-button>
+      >确定</el-button>
     </div>
   </el-dialog>
 </template>

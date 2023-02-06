@@ -1,6 +1,6 @@
 <template>
   <el-dialog
-    :title="!dataForm.id ? this.$t('window.add') : this.$t('window.edit')"
+    :title="!dataForm.id ? '新增' : '编辑'"
     :visible.sync="visible"
     @close="resetDataForm"
   >
@@ -12,17 +12,17 @@
       label-width="150px"
     >
       <el-row>
-        <el-form-item :label="$t('sys.user.account')" prop="account">
+        <el-form-item label="账号" prop="account">
           <el-input v-model="dataForm.account"></el-input>
         </el-form-item>
       </el-row>
       <el-row>
-        <el-form-item :label="$t('sys.user.name')" prop="name">
+        <el-form-item label="名称" prop="name">
           <el-input v-model="dataForm.name"></el-input>
         </el-form-item>
       </el-row>
       <el-row>
-        <el-form-item :label="$t('sys.user.deptName')" prop="deptName">
+        <el-form-item label="机构" prop="deptName">
           <el-select size="mini" v-model="dataForm.deptName">
             <el-option :value="dataForm.deptName">
               <el-tree
@@ -61,7 +61,7 @@
         </el-form-item>
       </el-row>
       <el-row>
-        <el-form-item :label="$t('sys.user.datas')" prop="systemDept">
+        <el-form-item label="管理机构" prop="systemDept">
           <el-select size="mini" v-model="dataForm.systemDept">
             <el-option :value="dataForm.systemDept">
               <el-tree
@@ -80,7 +80,7 @@
       </el-row>
       <el-row>
         <el-form-item
-          :label="$t('sys.user.email')"
+          label="邮箱"
           prop="email"
           :rules="dataForm.sendEmailFlag === '1' ? dynamicRules.email : []"
         >
@@ -89,7 +89,7 @@
       </el-row>
       <el-row>
         <el-form-item
-          :label="$t('sys.user.tel')"
+          label="电话"
           prop="tel"
           :rules="dataForm.sendflag === '1' ? dynamicRules.tel : []"
         >
@@ -97,7 +97,7 @@
         </el-form-item>
       </el-row>
       <el-row>
-        <el-form-item :label="$t('sys.user.flag')" prop="flag">
+        <el-form-item label="标志" prop="flag">
           <el-select size="mini" v-model="dataForm.flag">
             <el-option
               v-for="item in statusList"
@@ -110,12 +110,12 @@
       </el-row>
     </el-form>
     <div slot="footer">
-      <el-button @click="visible = false">{{$t('button.cancel')}}</el-button>
+      <el-button @click="visible = false">取消</el-button>
       <el-button
         type="primary"
         @click="dataFormSubmit()"
         v-loading.fullscreen.lock="fullscreenLoading"
-      >{{$t('button.confirm')}}</el-button>
+      >确定</el-button>
     </div>
   </el-dialog>
 </template>

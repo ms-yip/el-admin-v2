@@ -12,10 +12,10 @@
       :requestCallback="requestCallback"
     >
       <div slot="form">
-        <el-form-item :label="$t('sys.data.code')">
+        <el-form-item label="编号">
           <el-input v-model="dataForm.code"></el-input>
         </el-form-item>
-        <el-form-item :label="$t('sys.data.name')">
+        <el-form-item label="名称">
           <el-input v-model="dataForm.name"></el-input>
         </el-form-item>
       </div>
@@ -38,13 +38,13 @@ export default {
       api: '/service/data/getPage',
       columns: [
         { type: 'selection', align: 'center', width: '50' },
-        { label: 'sys.data.code', prop: 'code', align: 'center' },
-        { label: 'sys.data.nameEnUs', prop: 'nameEnUs', align: 'center' },
-        { label: 'sys.data.nameLocal', prop: 'nameLocal', align: 'center' },
-        { label: 'sys.data.value', prop: 'value', align: 'center' },
-        { label: 'sys.data.memo', prop: 'memo', align: 'center' },
+        { label: '编号', prop: 'code', align: 'center' },
+        { label: '英文', prop: 'nameEnUs', align: 'center' },
+        { label: '中文', prop: 'nameLocal', align: 'center' },
+        { label: '数据值', prop: 'value', align: 'center' },
+        { label: '备注', prop: 'memo', align: 'center' },
         {
-          label: 'sys.data.flag',
+          label: '状态',
           align: 'center',
           render (h, { row }) {
             const flag = (
@@ -135,7 +135,7 @@ export default {
         ids: ids,
         language: this.$store.state.i18n.locale === 'zh' ? 'zh_CN' : 'en_us'
       }
-      this.$confirm(this.$t('info.common.delete'), this.$t('window.prompt')).then(() => {
+      this.$confirm(this.$t('info.common.delete'), this.$t('提示')).then(() => {
         this.$http({
           url: '/service/data/del',
           method: 'post',

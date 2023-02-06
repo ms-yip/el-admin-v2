@@ -1,6 +1,6 @@
 <template>
   <el-dialog
-    :title="!dataForm.id ? this.$t('window.add') : this.$t('window.edit')"
+    :title="!dataForm.id ? '新增' : '编辑'"
     :visible.sync="visible"
     @close="resetDataForm"
   >
@@ -11,10 +11,10 @@
       :rules="dataRule"
       label-width="150px"
     >
-      <el-form-item :label="$t('sys.role.roleName')" prop="roleName">
+      <el-form-item :label="$t('角色名称')" prop="roleName">
         <el-input v-model="dataForm.roleName" :maxlength="25"></el-input>
       </el-form-item>
-      <el-form-item :label="$t('sys.role.roleLevel')" prop="roleLevel">
+      <el-form-item :label="$t('级别')" prop="roleLevel">
         <el-select size="mini" v-model="dataForm.roleLevel">
           <el-option
             v-for="item in levelList"
@@ -26,12 +26,12 @@
       </el-form-item>
     </el-form>
     <div slot="footer">
-      <el-button @click="visible = false">{{$t('button.cancel')}}</el-button>
+      <el-button @click="visible = false">取消</el-button>
       <el-button
         type="primary"
         @click="dataFormSubmit()"
         v-loading.fullscreen.lock="fullscreenLoading"
-      >{{$t('button.confirm')}}</el-button>
+      >确定</el-button>
     </div>
   </el-dialog>
 </template>

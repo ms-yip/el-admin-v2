@@ -32,6 +32,7 @@
           </div>
         </div>
         <div slot="graph" slot-scope="scopedSlots" class="list-box">
+          listbox
           <div class="card-box" v-for="(item, index) in scopedSlots.list" :key="index">
             {{item.typeId}}
           </div>
