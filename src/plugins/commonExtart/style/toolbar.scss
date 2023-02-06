@@ -1,0 +1,75 @@
+/* 按钮样式 */
+
+/* .grid-content .grid-tool-box :deep .el-upload .el-button,
+.grid-content .grid-tool-box .el-button {
+  border-width: 1px;
+  border-style: solid;
+  height: 34px;
+  line-height: 34px;
+  font-size: 14px;
+  padding: 0 13px;
+  color: #1d84ef;
+  background: transparent;
+  border-color: #1d84ef;
+  margin-bottom: 20px;
+  margin-right: 12px;
+}
+@media screen and (max-width: 1540px) {
+  .grid-content .grid-tool-box :deep .el-upload .el-button,
+  .grid-content .grid-tool-box .el-button {
+    border-width: 1px;
+    border-style: solid;
+    height: 30px;
+    line-height: 26px;
+    font-size: 12px;
+  }
+}
+.grid-content .grid-tool-box .el-button-group > .el-button:not(:last-child) {
+  margin-right: -1px;
+}
+
+.grid-content .grid-tool-box .el-button + .el-button {
+  margin: 0 12px 20px 0;
+}
+.grid-content .grid-tool-box :deep .el-upload .el-button.el-button--primary,
+.grid-content .grid-tool-box .el-button.el-button--primary {
+  color: #ffffff;
+  background: linear-gradient(90deg, #007dff 0%, #00a6fb 100%);
+  border-color: #1d84ef;
+  border: none;
+  padding: 1px 14px;
+}
+.grid-content .grid-tool-box .data-type .el-button.el-button--primary {
+  padding: 1px 14px;
+}
+.grid-content .grid-tool-box .el-button.el-button--primary:hover,
+.grid-content .grid-tool-box .el-button.el-button--primary:active {
+  background: #007dff;
+}
+
+.grid-content .grid-tool-box :deep .el-upload .el-button.is-plain,
+.grid-content .grid-tool-box .el-button.el-button--primary.is-plain {
+  color: #1d84ef;
+  background: transparent;
+  border-color: #1d84ef;
+}
+
+.grid-content .grid-tool-box .el-button-group .el-button.el-button--primary {
+  background: #007dff;
+}
+*/
+
+.grid-tool-box  {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  .toolbar-right {
+    min-width: 100px;
+    text-align: right;
+  }
+  .el-button {
+    margin-bottom: 10px;
+  }
+
+}

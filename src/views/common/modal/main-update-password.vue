@@ -1,6 +1,10 @@
 <template>
   <el-dialog
+<<<<<<< HEAD
     :title="$t('修改密码')"
+=======
+    :title="$t('window.changePassword')"
+>>>>>>> ad24299c2cbfb338e7f56e5a1e147b4269455d60
     :visible.sync="visible"
     :append-to-body="true"
   >
@@ -11,40 +15,72 @@
       @keyup.enter.native="dataFormSubmit()"
       label-width="150px"
     >
+<<<<<<< HEAD
       <el-form-item :label="$t('旧密码')" prop="password">
         <el-input
           type="password"
           v-model="dataForm.password"
           :placeholder="$t('旧密码')"
+=======
+      <el-form-item :label="$t('sys.user.changePwd_oldPassword')" prop="password">
+        <el-input
+          type="password"
+          v-model="dataForm.password"
+          :placeholder="$t('sys.user.changePwd_oldPassword')"
+>>>>>>> ad24299c2cbfb338e7f56e5a1e147b4269455d60
           maxlength="16"
           minlength="6"
         />
       </el-form-item>
+<<<<<<< HEAD
       <el-form-item :label="$t('新密码')" prop="newPassword">
         <el-input
           type="password"
           v-model="dataForm.newPassword"
           :placeholder="$t('新密码')"
+=======
+      <el-form-item :label="$t('sys.user.changePwd_newPassword')" prop="newPassword">
+        <el-input
+          type="password"
+          v-model="dataForm.newPassword"
+          :placeholder="$t('sys.user.changePwd_newPassword')"
+>>>>>>> ad24299c2cbfb338e7f56e5a1e147b4269455d60
           maxlength="16"
           minlength="6"
         />
       </el-form-item>
+<<<<<<< HEAD
       <el-form-item :label="$t('确认新密码')" prop="confirmPassword">
         <el-input
           type="password"
           v-model="dataForm.confirmPassword"
           :placeholder="$t('确认新密码')"
+=======
+      <el-form-item :label="$t('sys.user.changePwd_newPasswordConfirm')" prop="confirmPassword">
+        <el-input
+          type="password"
+          v-model="dataForm.confirmPassword"
+          :placeholder="$t('sys.user.changePwd_newPasswordConfirm')"
+>>>>>>> ad24299c2cbfb338e7f56e5a1e147b4269455d60
         />
       </el-form-item>
     </el-form>
     <span slot="footer" class="dialog-footer">
+<<<<<<< HEAD
       <el-button @click="visible = false">{{ $t('取消') }}</el-button>
+=======
+      <el-button @click="visible = false">{{ $t('btn.cancel') }}</el-button>
+>>>>>>> ad24299c2cbfb338e7f56e5a1e147b4269455d60
       <el-button
         type="primary"
         @click="dataFormSubmit()"
         v-loading.fullscreen.lock="fullscreenLoading"
       >
+<<<<<<< HEAD
         {{ $t('确定') }}
+=======
+        {{ $t('btn.save') }}
+>>>>>>> ad24299c2cbfb338e7f56e5a1e147b4269455d60
       </el-button>
     </span>
   </el-dialog>

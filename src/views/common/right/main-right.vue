@@ -23,6 +23,7 @@
               </span>
               <el-dropdown-menu slot="dropdown">
                 <el-dropdown-item @click.native="toUserInfo()">{{
+<<<<<<< HEAD
                   $t('用户信息')
                 }}</el-dropdown-item>
                 <el-dropdown-item @click.native="updatePasswordHandle()">{{
@@ -30,6 +31,15 @@
                 }}</el-dropdown-item>
                 <el-dropdown-item @click.native="logoutHandle()">{{
                   $t('退出')
+=======
+                  $t('window.userDetail')
+                }}</el-dropdown-item>
+                <el-dropdown-item @click.native="updatePasswordHandle()">{{
+                  $t('window.changePassword')
+                }}</el-dropdown-item>
+                <el-dropdown-item @click.native="logoutHandle()">{{
+                  $t('common.logout')
+>>>>>>> ad24299c2cbfb338e7f56e5a1e147b4269455d60
                 }}</el-dropdown-item>
               </el-dropdown-menu>
             </el-dropdown>
@@ -141,7 +151,11 @@ export default {
       this.$emit('updatePwd')
     },
     logoutHandle () {
+<<<<<<< HEAD
       this.$confirm(this.$t('确认退出'), this.$t('提示')).then(() => {
+=======
+      this.$confirm(this.$t('info.common.logout'), this.$t('window.prompt')).then(() => {
+>>>>>>> ad24299c2cbfb338e7f56e5a1e147b4269455d60
         this.$http.get('/logout').then(res => {
           if (res.code === 0) {
             this.$store.commit('resetStore')
